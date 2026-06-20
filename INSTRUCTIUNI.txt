@@ -1,0 +1,29 @@
+VARIANTA CU ÎNTREBĂRI MAI GRELE - TEST PD HAOS
+
+Ce s-a schimbat:
+- Grila de regulament are acum 15 întrebări, nu 8.
+- Întrebările sunt mai grele și includ situații-capcană: meta gaming, power gaming, cop bait, no fear, abuz, radio, favorizare, procedură.
+- Situațiile PD sunt mai complexe și cer răspuns pas cu pas.
+- Testul de descifrare este mai dificil și testează logică + raportare neutră.
+- Pagina evaluatorului are cheia corectă pentru cele 15 întrebări.
+
+Cum actualizezi site-ul pe GitHub:
+1. Descarcă ZIP-ul.
+2. Dă Extract / Extrage tot.
+3. Intră în folder.
+4. În repository-ul GitHub test-pd-haos, apasă Add file -> Upload files.
+5. Încarcă și înlocuiește aceste fișiere:
+   - index.html
+   - evaluator.html
+   - evaluator.js
+   - style.css
+   - common.js
+   - candidate.js
+6. Apasă Commit changes.
+7. Așteaptă 1-2 minute și dă Ctrl + F5 pe site.
+
+Link candidat:
+https://krp-01.github.io/test-pd-haos/
+
+Finalizare candidat:
+Candidatul apasa „Finalizeaza testul”, iar testul apare automat in portalul evaluator la Teste in asteptare.

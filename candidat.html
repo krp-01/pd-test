@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formular Candidat PD - HAOS România</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <span class="badge">Pagina candidatului</span>
+  <h1>Test Admitere PD — HAOS România</h1>
+  <p class="subtitle">Completează formularul sincer. La final apeși pe Finalizează testul, iar testul va fi trimis automat în portalul evaluator.</p>
+  <div class="toolbar">
+    <button type="button" class="success" onclick="finalizeTest()">Finalizează testul</button>
+    <button type="button" class="secondary" onclick="saveLocal()">Salvează temporar pe acest browser</button>
+    <button type="button" class="secondary" onclick="loadLocal()">Încarcă salvarea temporară</button>
+  </div>
+</header>
+
+<nav>
+  <a href="#ooc">Date OOC</a>
+  <a href="#ic">Date IC</a>
+  <a href="#psiho">Comportament</a>
+  <a href="#regulament">Regulament</a>
+  <a href="#situatii">Situații PD</a>
+  <a href="#descifrare">Descifrare</a>
+  <a href="#trimitere">Trimitere</a>
+</nav>
+
+<main>
+  <section id="ooc">
+    <div class="section-title"><div><h2>DATE OOC</h2><p class="hint">Date despre tine, completate sincer.</p></div></div>
+    <div class="grid">
+      <div class="field"><label>Numele tău</label><input type="text" name="ooc_name" placeholder="Ex: Alex"></div>
+      <div class="field"><label>Discord username</label><input type="text" name="discord_username" placeholder="Ex: alex#0000 sau alex.username"></div>
+      <div class="field"><label>Vârsta</label><input type="number" name="real_age" placeholder="Ex: 16"></div>
+      <div class="field"><label>Ocupația ta</label><input type="text" name="occupation" placeholder="Elev / student / angajat / altceva"></div>
+    </div>
+    <div class="field"><label>Ai sancțiuni active sau recente? Dacă da, explică de ce.</label><textarea name="sanctions"></textarea></div>
+    <div class="field">
+      <label>Cât timp poți fi activ în PD pe zi?</label>
+      <div class="inline-options">
+        <label class="pill-option"><input type="radio" name="activity_time" value="Sub 1 oră"> Sub 1 oră</label>
+        <label class="pill-option"><input type="radio" name="activity_time" value="1-2 ore"> 1–2 ore</label>
+        <label class="pill-option"><input type="radio" name="activity_time" value="2-4 ore"> 2–4 ore</label>
+        <label class="pill-option"><input type="radio" name="activity_time" value="Peste 4 ore"> Peste 4 ore</label>
+      </div>
+    </div>
+  </section>
+
+  <section id="ic">
+    <div class="section-title"><div><h2>DATE IC</h2><p class="hint">Date din identitatea ta IC.</p></div></div>
+    <div class="grid">
+      <div class="field"><label>Nume și prenume</label><input type="text" name="ic_name" placeholder="Ex: Andrei Popescu"></div>
+      <div class="field"><label>Vârsta</label><input type="number" name="ic_age" placeholder="Ex: 28"></div>
+      <div class="field"><label>ID-ul tău in-game</label><input type="text" name="game_id" placeholder="Ex: 1234"></div>
+      <div class="field"><label>CNP-ul tău IC</label><input type="text" name="cnp_ic" placeholder="Ex: CNP IC"></div>
+      <div class="field"><label>Studiile tale</label><input type="text" name="ic_education" placeholder="Ex: Academia de Poliție / liceu / facultate"></div>
+    </div>
+    <div class="field"><label>Joburi anterioare</label><textarea name="previous_jobs"></textarea></div>
+    <div class="field"><label>Descriere IC a personajului, minimum 80 cuvinte</label><textarea name="ic_description"></textarea></div>
+    <div class="field"><label>De ce vrei să intri în PD?</label><textarea name="why_pd" placeholder="Scrie sincer motivația ta..."></textarea></div>
+    <div class="field"><label>De ce consideri că ești potrivit pentru Poliția Română?</label><textarea name="ic_fit"></textarea></div>
+    <div class="field"><label>Enumeră 5 calități IC care te recomandă pentru PD</label><textarea name="ic_qualities" placeholder="Ex: disciplină, calm, respect, comunicare, spirit de observație..."></textarea></div>
+  </section>
+
+  <section id="psiho">
+    <div class="section-title"><div><h2>3. Test comportamental / psihologic RP</h2><p class="hint">Nu este test medical. Este un test de comportament pentru roleplay.</p></div></div>
+    <table class="likert">
+      <thead><tr><th>Afirmație</th><th class="center">1<br><span class="small">dezacord</span></th><th class="center">2</th><th class="center">3</th><th class="center">4</th><th class="center">5<br><span class="small">acord</span></th></tr></thead>
+      <tbody>
+        <tr><td>Pot rămâne calm chiar dacă un jucător mă provoacă.</td><td class="center"><input type="radio" name="l1" value="1"></td><td class="center"><input type="radio" name="l1" value="2"></td><td class="center"><input type="radio" name="l1" value="3"></td><td class="center"><input type="radio" name="l1" value="4"></td><td class="center"><input type="radio" name="l1" value="5"></td></tr>
+<tr><td>Nu folosesc funcția de polițist pentru răzbunări personale.</td><td class="center"><input type="radio" name="l2" value="1"></td><td class="center"><input type="radio" name="l2" value="2"></td><td class="center"><input type="radio" name="l2" value="3"></td><td class="center"><input type="radio" name="l2" value="4"></td><td class="center"><input type="radio" name="l2" value="5"></td></tr>
+<tr><td>Accept ordinele superiorilor, dar refuz acțiunile abuzive sau neregulamentare.</td><td class="center"><input type="radio" name="l3" value="1"></td><td class="center"><input type="radio" name="l3" value="2"></td><td class="center"><input type="radio" name="l3" value="3"></td><td class="center"><input type="radio" name="l3" value="4"></td><td class="center"><input type="radio" name="l3" value="5"></td></tr>
+<tr><td>Pot pierde o situație RP fără să mă enervez OOC.</td><td class="center"><input type="radio" name="l4" value="1"></td><td class="center"><input type="radio" name="l4" value="2"></td><td class="center"><input type="radio" name="l4" value="3"></td><td class="center"><input type="radio" name="l4" value="4"></td><td class="center"><input type="radio" name="l4" value="5"></td></tr>
+<tr><td>Nu favorizez prieteni, mafii sau persoane cunoscute.</td><td class="center"><input type="radio" name="l5" value="1"></td><td class="center"><input type="radio" name="l5" value="2"></td><td class="center"><input type="radio" name="l5" value="3"></td><td class="center"><input type="radio" name="l5" value="4"></td><td class="center"><input type="radio" name="l5" value="5"></td></tr>
+<tr><td>Într-o situație tensionată, comunic înainte să acționez impulsiv.</td><td class="center"><input type="radio" name="l6" value="1"></td><td class="center"><input type="radio" name="l6" value="2"></td><td class="center"><input type="radio" name="l6" value="3"></td><td class="center"><input type="radio" name="l6" value="4"></td><td class="center"><input type="radio" name="l6" value="5"></td></tr>
+<tr><td>Nu deschid OOC fără motiv regulamentar.</td><td class="center"><input type="radio" name="l7" value="1"></td><td class="center"><input type="radio" name="l7" value="2"></td><td class="center"><input type="radio" name="l7" value="3"></td><td class="center"><input type="radio" name="l7" value="4"></td><td class="center"><input type="radio" name="l7" value="5"></td></tr>
+<tr><td>Pot accepta critică de la un superior fără să devin ironic sau agresiv.</td><td class="center"><input type="radio" name="l8" value="1"></td><td class="center"><input type="radio" name="l8" value="2"></td><td class="center"><input type="radio" name="l8" value="3"></td><td class="center"><input type="radio" name="l8" value="4"></td><td class="center"><input type="radio" name="l8" value="5"></td></tr>
+<tr><td>Nu folosesc limbaj jignitor pe chat sau voice.</td><td class="center"><input type="radio" name="l9" value="1"></td><td class="center"><input type="radio" name="l9" value="2"></td><td class="center"><input type="radio" name="l9" value="3"></td><td class="center"><input type="radio" name="l9" value="4"></td><td class="center"><input type="radio" name="l9" value="5"></td></tr>
+<tr><td>Înțeleg că PD înseamnă responsabilitate, nu statut.</td><td class="center"><input type="radio" name="l10" value="1"></td><td class="center"><input type="radio" name="l10" value="2"></td><td class="center"><input type="radio" name="l10" value="3"></td><td class="center"><input type="radio" name="l10" value="4"></td><td class="center"><input type="radio" name="l10" value="5"></td></tr>
+
+      </tbody>
+    </table>
+
+    <div class="field"><label>1. Un suspect te insultă IC în timpul unei opriri. Ce faci?</label><textarea name="behavior_1"></textarea></div>
+    <div class="field"><label>2. Un prieten îți cere să îl lași fără amendă sau să îi dai informații din PD. Ce faci?</label><textarea name="behavior_2"></textarea></div>
+    <div class="field"><label>3. Un coleg PD face abuz de funcție. Ce faci?</label><textarea name="behavior_3"></textarea></div>
+    <div class="field"><label>4. Pierzi o urmărire și ceilalți râd de tine. Cum reacționezi?</label><textarea name="behavior_4"></textarea></div>
+    <div class="field"><label>5. De ce crezi că un polițist slab poate strica RP-ul pe server?</label><textarea name="behavior_5"></textarea></div>
+  </section>
+
+  <section id="regulament">
+    <div class="section-title"><div><h2>4. Test regulament HAOS + RP — nivel avansat</h2><p class="hint">Alege răspunsul corect. Întrebările sunt gândite să prindă lipsa de experiență, abuzul și confuzia dintre IC/OOC.</p></div></div>
+
+    <div class="question-card"><strong>1. În timpul unei urmăriri, un suspect intră cu mașina într-o zonă aglomerată. Care este reacția corectă?</strong><div class="checks">
+      <label class="check-row"><input type="radio" name="q1" value="A"> A. Îl lovești intenționat cu mașina ca să oprești scena rapid.</label>
+      <label class="check-row"><input type="radio" name="q1" value="B"> B. Continui urmărirea controlat, anunți locația pe radio, ceri sprijin și eviți manevrele nerealiste.</label>
+      <label class="check-row"><input type="radio" name="q1" value="C"> C. Deschizi OOC și îi spui să oprească fiindcă nu ai chef de urmărire.</label>
+      <label class="check-row"><input type="radio" name="q1" value="D"> D. Tragi direct fără somație, indiferent de situație.</label></div></div>
+
+    <div class="question-card"><strong>2. Un coleg îți spune pe Discord că un anumit jucător are arme ilegale, dar personajul tău nu a aflat asta IC. Ce faci?</strong><div class="checks">
+      <label class="check-row"><input type="radio" name="q2" value="A"> A. Îl oprești imediat IC și îl percheziționezi.</label>
+      <label class="check-row"><input type="radio" name="q2" value="B"> B. Folosești informația doar dacă o confirmi printr-o acțiune IC legală și justificată.</label>
+      <label class="check-row"><input type="radio" name="q2" value="C"> C. Îi spui altui coleg să îl verifice fără motiv IC.</label>
+      <label class="check-row"><input type="radio" name="q2" value="D"> D. Îl urmărești doar pentru că „știi tu” că are arme.</label></div></div>
+
+    <div class="question-card"><strong>3. Ce este cel mai apropiat de Power Gaming într-o acțiune PD?</strong><div class="checks">
+      <label class="check-row"><input type="radio" name="q3" value="A"> A. „Îl încătușez automat, fără să îi dau șansă să reacționeze și fără RP.”</label>
+      <label class="check-row"><input type="radio" name="q3" value="B"> B. „Îi cer actele, îi explic motivul opririi și aștept răspuns.”</label>
+      <label class="check-row"><input type="radio" name="q3" value="C"> C. „Cer sprijin pe radio.”</label>
+      <label class="check-row"><input type="radio" name="q3" value="D"> D. „Scriu raport după intervenție.”</label></div></div>
+
+    <div class="question-card"><strong>4. Un suspect este înconjurat de 4 polițiști înarmați, dar refuză orice frică și începe să danseze. Ce problemă RP poate fi aici?</strong><div class="checks">
+      <label class="check-row"><input type="radio" name="q4" value="A"> A. Mixing.</label>
+      <label class="check-row"><input type="radio" name="q4" value="B"> B. No Fear.</label>
+      <label class="check-row"><input type="radio" name="q4" value="C"> C. Combat logging.</label>
+      <label class="check-row"><input type="radio" name="q4" value="D"> D. Fail driving.</label></div></div>
+
+    <div class="question-card"><strong>5. Un civil te provoacă intenționat: trece de 5 ori pe lângă secție, claxonează și spune „hai după mine”. Ce poate fi?</strong><div class="checks">
+      <label class="check-row"><input type="radio" name="q5" value="A"> A. Cop Bait, dacă nu există motiv RP real.</label>
+      <label class="check-row"><input type="radio" name="q5" value="B"> B. RP obligatoriu de urmărire.</label>
+      <label class="check-row"><input type="radio" name="q5" value="C"> C. Motiv să îl arestezi direct fără procedură.</label>
+      <label class="check-row"><input type="radio" name="q5" value="D"> D. Motiv să îl jignești OOC.</label></div></div>
+
+    <div class="question-card"><strong>6. Care este cea mai bună comunicare radio într-o urmărire?</strong><div class="checks">
+      <label class="check-row"><input type="radio" name="q6" value="A"> A. „E aici, veniți repede!”</label>
+      <label class="check-row"><input type="radio" name="q6" value="B"> B. „Unitatea 21, urmăresc vehicul Sultan negru, 2 ocupanți, direcția Nord pe autostradă, solicit sprijin.”</label>
+      <label class="check-row"><input type="radio" name="q6" value="C"> C. „Ăsta e prost, prindeți-l!”</label>
+      <label class="check-row"><input type="radio" name="q6" value="D"> D. Nu spui nimic pe radio ca să nu deranjezi.</label></div></div>
+
+    <div class="question-card"><strong>7. Un jucător rupe scena și scrie OOC că faci abuz. Ce faci?</strong><div class="checks">
+      <label class="check-row"><input type="radio" name="q7" value="A"> A. Îl înjuri OOC fiindcă te-a enervat.</label>
+      <label class="check-row"><input type="radio" name="q7" value="B"> B. Rămâi calm, continui RP-ul dacă se poate, iar dacă vine staff explici situația civilizat.</label>
+      <label class="check-row"><input type="radio" name="q7" value="C"> C. Îi dai amendă mai mare ca pedeapsă OOC.</label>
+      <label class="check-row"><input type="radio" name="q7" value="D"> D. Ieși de pe server ca să eviți ticketul.</label></div></div>
+
+    <div class="question-card"><strong>8. Dacă un superior îți dă un ordin care pare neregulamentar, ce faci?</strong><div class="checks">
+      <label class="check-row"><input type="radio" name="q8" value="A"> A. Îl execuți indiferent de consecințe, pentru că ordinul e ordin.</label>
+      <label class="check-row"><input type="radio" name="q8" value="B"> B. Ceri clarificare calm, refuzi abuzul dacă este evident și raportezi pe cale ierarhică.</label>
+      <label class="check-row"><input type="radio" name="q8" value="C"> C. Îl faci de râs pe OOC.</label>
+      <label class="check-row"><input type="radio" name="q8" value="D"> D. Îți dai demisia instant în mijlocul scenei.</label></div></div>
+
+    <div class="question-card"><strong>9. Un prieten îți cere să îi spui unde sunt patrulele ca să evite poliția. Ce faci?</strong><div class="checks">
+      <label class="check-row"><input type="radio" name="q9" value="A"> A. Îi spui, că e prietenul tău.</label>
+      <label class="check-row"><input type="radio" name="q9" value="B"> B. Refuzi, pentru că este favorizare și strică RP-ul.</label>
+      <label class="check-row"><input type="radio" name="q9" value="C"> C. Îi spui doar dacă promite că nu spune nimănui.</label>
+      <label class="check-row"><input type="radio" name="q9" value="D"> D. Îi dai informații false ca să râzi de el.</label></div></div>
+
+    <div class="question-card"><strong>10. Într-o percheziție, care este varianta cea mai corectă?</strong><div class="checks">
+      <label class="check-row"><input type="radio" name="q10" value="A"> A. Percheziționezi pe oricine, oricând, fără motiv.</label>
+      <label class="check-row"><input type="radio" name="q10" value="B"> B. Ai un motiv IC clar, explici procedura, păstrezi RP-ul și eviți abuzul.</label>
+      <label class="check-row"><input type="radio" name="q10" value="C"> C. Percheziționezi doar persoanele care nu îți plac.</label>
+      <label class="check-row"><input type="radio" name="q10" value="D"> D. Îl pui să îți dea itemele fără scenă RP.</label></div></div>
+
+    <div class="question-card"><strong>11. Ce faci dacă pierzi o scenă RP, dar știi că ai procedat corect?</strong><div class="checks">
+      <label class="check-row"><input type="radio" name="q11" value="A"> A. Te răzbuni pe jucător data viitoare.</label>
+      <label class="check-row"><input type="radio" name="q11" value="B"> B. Accepți rezultatul, îți păstrezi calmul și continui RP-ul.</label>
+      <label class="check-row"><input type="radio" name="q11" value="C"> C. Spui OOC că scena nu contează.</label>
+      <label class="check-row"><input type="radio" name="q11" value="D"> D. Chemi staff fără motiv doar pentru că ai pierdut.</label></div></div>
+
+    <div class="question-card"><strong>12. Ce este Mixing într-o discuție de poliție?</strong><div class="checks">
+      <label class="check-row"><input type="radio" name="q12" value="A"> A. Spui IC: „Am văzut pe Discord că ești mafiot.”</label>
+      <label class="check-row"><input type="radio" name="q12" value="B"> B. Ceri actele unui șofer IC.</label>
+      <label class="check-row"><input type="radio" name="q12" value="C"> C. Faci un raport de patrulă.</label>
+      <label class="check-row"><input type="radio" name="q12" value="D"> D. Ceri backup pe radio.</label></div></div>
+
+    <div class="question-card"><strong>13. Un civil refuză să coboare din mașină, dar nu este agresiv. Ce faci prima dată?</strong><div class="checks">
+      <label class="check-row"><input type="radio" name="q13" value="A"> A. Spargi direct geamul și îl scoți forțat.</label>
+      <label class="check-row"><input type="radio" name="q13" value="B"> B. Comunici calm, explici motivul, repeți solicitarea și escaladezi doar dacă situația o cere.</label>
+      <label class="check-row"><input type="radio" name="q13" value="C"> C. Îl insulți ca să reacționeze.</label>
+      <label class="check-row"><input type="radio" name="q13" value="D"> D. Îl lași să plece fără să notezi nimic.</label></div></div>
+
+    <div class="question-card"><strong>14. Care este cel mai important lucru într-o scenă PD?</strong><div class="checks">
+      <label class="check-row"><input type="radio" name="q14" value="A"> A. Să câștigi scena cu orice preț.</label>
+      <label class="check-row"><input type="radio" name="q14" value="B"> B. Să faci o scenă corectă, realistă și plăcută pentru toți participanții.</label>
+      <label class="check-row"><input type="radio" name="q14" value="C"> C. Să dai cât mai multe amenzi.</label>
+      <label class="check-row"><input type="radio" name="q14" value="D"> D. Să arăți că ai autoritate OOC.</label></div></div>
+
+    <div class="question-card"><strong>15. Ce faci dacă observi că un candidat/coleg PD este bun la tras, dar toxic în comunicare?</strong><div class="checks">
+      <label class="check-row"><input type="radio" name="q15" value="A"> A. Îl accepți, fiindcă skill-ul de tras e tot ce contează.</label>
+      <label class="check-row"><input type="radio" name="q15" value="B"> B. Îl respingi sau îl trimiți la training, pentru că un polițist toxic strică RP-ul.</label>
+      <label class="check-row"><input type="radio" name="q15" value="C"> C. Îl pui direct lider, ca să sperie civilii.</label>
+      <label class="check-row"><input type="radio" name="q15" value="D"> D. Îl lași să facă ce vrea dacă are prieteni în PD.</label></div></div>
+
+
+    <h3>Întrebări cu răspuns manual</h3>
+    <p class="hint">Răspunde clar, cu exemple concrete și argumente. Aceste răspunsuri vor fi verificate manual de evaluator.</p>
+    <div class="question-card"><label>16. Ce reprezintă termenul PowerGaming (PG)? Dă câte 2 exemple valide.</label><textarea name="rp_manual_1"></textarea></div>
+    <div class="question-card"><label>17. Ce reprezintă termenul de Low Effort Roleplay? Dă un exemplu valid.</label><textarea name="rp_manual_2"></textarea></div>
+    <div class="question-card"><label>18. Ce reprezintă termenul de MetaGaming? Oferă 3 exemple valide.</label><textarea name="rp_manual_3"></textarea></div>
+    <div class="question-card"><label>19. Dacă o persoană scrie „/me mă duc să mănânc” sau „/me mă duc la toaletă”, se consideră Mixing? Explică de ce.</label><textarea name="rp_manual_4"></textarea></div>
+    <div class="question-card"><label>20. Te duci la un jaf, iar mafiotul scrie pe /me că încuie ușile băncii. Se poate considera PowerGaming? Argumentează răspunsul.</label><textarea name="rp_manual_5"></textarea></div>
+  </section>
+
+
+  <section id="situatii">
+    <div class="section-title"><div><h2>5. Situații posibile ca polițist — nivel avansat</h2><p class="hint">Răspunde în minimum 5–8 rânduri pentru fiecare situație. Evaluatorul urmărește procedură, calm, realism și proporționalitate.</p></div></div>
+    <div class="question-card"><label>1. Oprire complexă în trafic: un vehicul este oprit pentru condus haotic. Șoferul este calm, pasagerul este agresiv verbal, iar al treilea ocupant încearcă să coboare. Scrie procedura ta pas cu pas: comunicare, siguranță, radio, verificări, escaladare.</label><textarea name="situation_1"></textarea></div>
+    <div class="question-card"><label>2. Urmărire cu risc: suspectul fuge prin oraș, trece pe roșu și intră într-o zonă aglomerată. Cum gestionezi urmărirea fără să faci fail RP sau abuz?</label><textarea name="situation_2"></textarea></div>
+    <div class="question-card"><label>3. Prieten implicat: oprești un jucător și îți dai seama că este prietenul tău. Are o abatere minoră, dar îți cere să îl ierți. Ce faci IC și ce NU ai voie să faci OOC?</label><textarea name="situation_3"></textarea></div>
+    <div class="question-card"><label>4. Conflict cu o mafie: un membru de mafie te provoacă intenționat, te filmează și încearcă să te facă să greșești. Cum păstrezi scena corectă?</label><textarea name="situation_4"></textarea></div>
+    <div class="question-card"><label>5. Coleg abuziv: colegul tău amenință un civil, ridică tonul și vrea să îi dea amendă fără motiv clar. Ce faci pe moment și ce faci după scenă?</label><textarea name="situation_5"></textarea></div>
+    <div class="question-card"><label>6. Scenă medicală: după o intervenție, suspectul este rănit RP, iar civilii țipă că poliția a abuzat. Cum securizezi zona, cum comunici și cum continui RP-ul?</label><textarea name="situation_6"></textarea></div>
+    <div class="question-card"><label>7. Ordin discutabil: un superior îți cere să faci o percheziție fără motiv IC clar. Cum răspunzi fără să pari nesupus, dar fără să faci abuz?</label><textarea name="situation_7"></textarea></div>
+    <div class="question-card"><label>8. Ticket pe tine: un jucător face ticket și spune că ai făcut power gaming. Ce explici staff-ului și cum arăți că ai procedat corect?</label><textarea name="situation_8"></textarea></div>
+    <div class="question-card"><label>9. Radio haotic: în timpul unei intervenții, 3 colegi vorbesc peste tine, iar informațiile importante se pierd. Ce transmiți și cum organizezi comunicarea?</label><textarea name="situation_9"></textarea></div>
+    <div class="question-card"><label>10. Decizie morală: ai de ales între a câștiga scena rapid prin forță sau a face procedura completă, dar mai lentă. Ce alegi și de ce?</label><textarea name="situation_10"></textarea></div>
+  </section>
+
+
+  <section id="descifrare">
+    <div class="section-title"><div><h2>6. Test de descifrare rapidă — nivel avansat</h2><p class="hint">Timp recomandat: 4 minute. Se testează atenția, logica, viteza și capacitatea de a scrie rapoarte clare.</p></div></div>
+    <div class="question-card"><label><strong>1. Raport cronologic — cerință</strong><br>„agentul a observat vehiculul suspect inainte ca dispeceratul sa confirme numarul dar dupa ce martorul a spus culoarea masinii iar soferul nu a fugit decat dupa a doua somatie”</label><textarea name="decipher_1" placeholder="Transformă în raport PD clar, cu ordine cronologică..."></textarea></div>
+    <div class="question-card"><label><strong>2. Logică intervenție — cerință</strong><br>„daca unitatea 12 ajunge dupa unitatea 7 dar inaintea ambulantei iar suspectul plecase inainte sa ajunga unitatea 7 cine a fost primul la scena dintre unitati si cine lipsea deja”</label><textarea name="decipher_2" placeholder="Răspunde scurt și explică logic..."></textarea></div>
+    <div class="question-card"><label><strong>3. Raport neutru — cerință</strong><br>„civilul a spus ca politistul l a oprit fara motiv dar camera arata ca vehiculul trecuse pe rosu inainte de oprire iar pasagerul a coborat fara permisiune dupa ce agentul ceruse actele”</label><textarea name="decipher_3" placeholder="Scrie un raport neutru, fără limbaj acuzator..."></textarea></div>
+    <div class="question-card"><label><strong>4. Escaladare proporțională — cerință</strong><br>„nu orice refuz inseamna automat fuga dar orice refuz repetat dupa explicarea motivului poate duce la escaladarea procedurii daca agentul pastreaza comunicarea si proportionalitatea”</label><textarea name="decipher_4" placeholder="Explică ideea în maximum 2 fraze..."></textarea></div>
+    <div class="question-card"><label><strong>5. Ordine martori/vehicule — cerință</strong><br>„martorul a vazut masina albastra dupa masina alba dar inainte de masina neagra iar camera arata ca masina neagra a trecut ultima care masina a trecut prima dintre cele trei daca martorul are dreptate”</label><textarea name="decipher_5" placeholder="Răspunde și explică ordinea..."></textarea></div>
+    <div class="question-card"><label><strong>6. Control OOC — cerință</strong><br>„un civil te jigneste ic un coleg rade pe radio iar tu esti tentat sa raspunzi ooc scrie ce trebuie sa faci ca sa nu transformi scena intr un conflict ooc”</label><textarea name="decipher_6" placeholder="Răspunde ca regulă de comportament PD..."></textarea></div>
+    <div class="question-card"><label><strong>7. Metagaming / Justificare IC — cerință</strong><br>„daca informatia despre arma vine de pe discord dar perchezitia se face in joc fara motiv ic atunci problema nu este arma ci modul in care politistul a ajuns sa actioneze”</label><textarea name="decipher_7" placeholder="Identifică problema RP și explică..."></textarea></div>
+    <div class="question-card"><label><strong>8. Principiu de escaladare PD — cerință</strong><br>„un politist bun nu escaladeaza ca sa castige ci escaladeaza doar cand situatia ic cere asta si cand comunicarea nu mai este suficienta”</label><textarea name="decipher_8" placeholder="Transformă în principiu PD..."></textarea></div>
+  </section>
+
+  <section id="trimitere">
+    <div class="section-title"><div><h2>7. Finalizare test</h2><p class="hint">Apasă butonul de mai jos după ce ai completat tot. Testul va fi trimis automat în portalul evaluator, la categoria Teste în așteptare.</p></div></div>
+    <div class="checks">
+      <label class="check-row"><input type="checkbox" name="final_confirm"> <span>Confirm că am completat sincer și că accept verificarea aplicației de către evaluatorul PD.</span></label>
+      <label class="check-row"><input type="checkbox" name="confirm_staff"> <span>Accept că testerii PD pot respinge aplicația dacă observă comportament nepotrivit.</span></label>
+    </div>
+    <button type="button" class="success" onclick="finalizeTest()">Finalizează testul</button>
+    <div id="result" class="result-box hidden">
+      <h3>Test finalizat</h3>
+      <p class="hint">După finalizare, testul apare automat în portalul evaluator la Teste în așteptare.</p>
+    </div>
+  </section>
+</main>
+
+<footer>Pagina candidatului nu conține răspunsurile corecte și nu are opțiune de PDF/Word.</footer>
+<script src="common.js"></script>
+<script src="backend-config.js"></script>
+<script src="backend-api.js"></script>
+<script src="candidate.js"></script>
+</body>
+</html>
